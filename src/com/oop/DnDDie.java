@@ -1,6 +1,6 @@
 package com.oop;
 
-public class DnDDie extends GameDie {
+public class DnDDie extends Die {
 
     public DnDDie(){
         super();

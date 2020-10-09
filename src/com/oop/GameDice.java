@@ -1,6 +1,5 @@
 package com.oop;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -9,7 +8,7 @@ public class GameDice {
     private int sides;
     private int diceCount;
     private int result;
-    private ArrayList<GameDie> dice;
+    private ArrayList<Die> dice;
 
     Random random = new Random();
 
@@ -17,7 +16,7 @@ public class GameDice {
 
     }
 
-    public GameDice(int sides, int diceCount, ArrayList<GameDie> dice){
+    public GameDice(int sides, int diceCount, ArrayList<Die> dice){
         this.sides = sides;
         this.diceCount = diceCount;
         this.dice = dice;
@@ -28,7 +27,7 @@ public class GameDice {
         return result;
     }
 
-    public List<GameDie> rollDice(int diceCount, int sides, ArrayList<GameDie> dice){
+    public List<Die> rollDice(int diceCount, int sides, ArrayList<Die> dice){
         for(int die = 0; die < diceCount; die++){
 
         }

@@ -38,7 +38,7 @@ public class AttackCalculator {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         // Break up the input
-        String[] inArr = input.split("d", 2);
+        String[] inArr = input.split("d");
         int x = Integer.parseInt(inArr[0]);
         int y = Integer.parseInt(inArr[1]);
         ArrayList<Integer> userInput = new ArrayList<Integer>();
