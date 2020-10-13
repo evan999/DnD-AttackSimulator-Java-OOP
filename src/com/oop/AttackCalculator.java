@@ -2,6 +2,7 @@ package com.oop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class AttackCalculator {
@@ -11,6 +12,8 @@ public class AttackCalculator {
     private int defenseMod;
     private int attackMod;
     private String damageDice;
+
+    static Scanner scanner = new Scanner(System.in);
 
     public AttackCalculator(){
 
@@ -52,6 +55,27 @@ public class AttackCalculator {
     }
 
     public boolean isCriticalMiss(boolean criticalMiss){
+        return true;
+    }
 
+    public void rollDice(Random random, int sides, int dice){
+
+    }
+
+    static public List<Integer> getDamageDice(){
+        System.out.println("Enter damage dice 1-20 -> {x}d{y} : ");
+        String userInput = scanner.nextLine();
+        String[] inputArray = userInput.split("d");
+        int dice = Integer.parseInt(inputArray[0]);
+        int sides = Integer.parseInt(inputArray[1]);
+        /*
+        List<Integer> choices = new ArrayList<>();
+        for(String choice : inputArray){
+            choices.add(Integer.parseInt(choice));
+        }
+        */
+
+        // int dice =
+        //return Integer.parseInt(userInput) - 1;
     }
 }

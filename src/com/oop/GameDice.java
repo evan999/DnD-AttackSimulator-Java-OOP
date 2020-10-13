@@ -27,9 +27,11 @@ public class GameDice {
         return result;
     }
 
+    /*
     public List<Die> rollDice(int diceCount, int sides, ArrayList<Die> dice){
         for(int die = 0; die < diceCount; die++){
 
         }
     }
+    */
 }
