@@ -9,6 +9,7 @@ public class DnDConsole extends Console {
         startGame("Dungeons and Dragons");
     }
 
+    /*
     static public List<Integer> getDamageDice(){
         System.out.println("Enter damage dice 1-20 -> {x}d{y} : ");
         String userInput = scanner.nextLine();
@@ -20,9 +21,10 @@ public class DnDConsole extends Console {
         for(String choice : inputArray){
             choices.add(Integer.parseInt(choice));
         }
-        */
+
 
         // int dice =
         //return Integer.parseInt(userInput) - 1;
     }
+    */
 }
