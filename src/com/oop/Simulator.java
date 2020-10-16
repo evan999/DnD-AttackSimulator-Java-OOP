@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class AttackCalculator {
+public class Simulator {
     private boolean isCriticalHit = false;
     private boolean isCriticalMiss = false;
     private int damage;
@@ -18,11 +18,11 @@ public class AttackCalculator {
 
     static Scanner scanner = new Scanner(System.in);
 
-    public AttackCalculator(){
+    public Simulator(){
         this.damage = 0;
     }
 
-    public AttackCalculator(int armorClass, int defenseMod, int attackMod, String damageDice){
+    public Simulator(int armorClass, int defenseMod, int attackMod, String damageDice){
         this.armorClass = armorClass;
         this.defenseMod = defenseMod;
         this.attackMod = attackMod;
@@ -31,27 +31,33 @@ public class AttackCalculator {
 
     public int attack(int armorClass, int defenseMod, int attackMod, String damageDice){
         damage = dieTwenty.roll();
-        if(damage == 20){
+        int criticalHit = 20;
+        int criticalMiss = 1;
+
+        if(damage == criticalHit){
             this.isCriticalHit = true;
             System.out.println("Critical Hit!");
         }
 
-        if(damage == 1){
+        if(damage == criticalMiss){
             this.isCriticalMiss = true;
             System.out.println("Critical Miss! No damage dealt. Turn ends.");
             return 0;
         }
 
-        int totalDamage = damage + attackMod;
-
-        if(totalDamage < (armorClass + defenseMod)){
-            System.out.println("Miss! No damage dealt");
+        if((damage + attackMod) < (damage + defenseMod)){
+            System.out.println("Miss! No damage dealt. Turn ends.");
             return 0;
         }
         else{
-            String[] inputArray = damageDice.split("d");
-            int x = Integer.parseInt(inputArray[0]);
-            int y = Integer.parseInt(inputArray[1]);
+            String[] attack = damageDice.split("d");
+            int x = Integer.parseInt(attack[0]);
+            int max = Integer.parseInt(attack[1]);
+
+            if(isCriticalHit){
+                
+            }
+
         }
 
 
@@ -100,14 +106,14 @@ public class AttackCalculator {
 
 
     static public List<Integer> getDamageDice(){
-        System.out.println("Enter damage dice 1-20 -> {x}d{y} : ");
-        String userInput = scanner.nextLine();
-        String[] inputArray = userInput.split("d");
-        int dice = Integer.parseInt(inputArray[0]);
-        int sides = Integer.parseInt(inputArray[1]);
+        System.out.println("Enter damage dice 1-20, x for attack, d, y for max -> {x}d{y} : ");
+        String attack = scanner.nextLine();
+        String[] attackArr = attack.split("d");
+        int dice = Integer.parseInt(attackArr[0]);
+        int sides = Integer.parseInt(attackArr[1]);
 
         List<Integer> choices = new ArrayList<>();
-        for(String choice : inputArray){
+        for(String choice : attackArr){
             choices.add(Integer.parseInt(choice));
         }
 
