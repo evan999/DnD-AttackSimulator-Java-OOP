@@ -12,8 +12,7 @@ public class Main {
 
         Simulator calculator = new Simulator();
 
-        calculator.attack(5, 5, 5, "xdy");
-
+        calculator.attack(5, 4, 7, "5d7");
 
     }
 }
